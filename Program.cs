@@ -23,10 +23,11 @@ namespace Array_Problem_Statements
                 }
                 Console.WriteLine($"{a[i]}. {count}");
 
-            }
+            } 
+
             int[] array = { 1, 2, 3, 4, 2, 3, 5, 6, 7, 1, 8, 9, 5 };
 
-            Console.WriteLine("Unique elements in the array:");
+            Console.WriteLine("\nUnique elements in the array:");
 
             // Use a HashSet to track unique elements
             HashSet<int> uniqueElements = new HashSet<int>();
@@ -43,6 +44,41 @@ namespace Array_Problem_Statements
             {
                 Console.Write(uniqueElement + " ");
             }
+
+
+            int[] array1 = { 1, 2, 3, 4, 2, 3, 5, 6, 7, 1, 8, 9, 5 };
+
+            Console.WriteLine("\n\nFrequency of each element in the array:");
+
+            // Use a Dictionary to track the frequency of each element
+            Dictionary<int, int> frequencyDictionary = CountFrequency(array1);
+
+            // Print the frequency of each element
+            foreach (var kvp in frequencyDictionary)
+            {
+                Console.WriteLine($"{kvp.Key}: {kvp.Value} times");
+            }
+        }
+
+        static Dictionary<int, int> CountFrequency(int[] array1)
+        {
+            Dictionary<int, int> frequencyDictionary = new Dictionary<int, int>();
+
+            foreach (int num in array1)
+            {
+                if (frequencyDictionary.ContainsKey(num))
+                {
+                    // Increment the count if the number is already in the dictionary
+                    frequencyDictionary[num]++;
+                }
+                else
+                {
+                    // Add the number to the dictionary with a count of 1
+                    frequencyDictionary.Add(num, 1);
+                }
+            }
+
+            return frequencyDictionary;
         }
     }
 }
