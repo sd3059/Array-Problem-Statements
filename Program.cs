@@ -10,11 +10,16 @@ namespace Array_Problem_Statements
     {
         static void Main(string[] args)
         {
+            int[] array3 = { 1, 2, 3, 4, 5 };
+            Console.WriteLine(array3.Max());
+            Console.WriteLine(array3.Min());
+            Console.ReadLine();
+
             int[] a = { 1, 2, 2, 3, 4, 5, 6, 6, 6, 6, 7, 7, 7 };
-            for(int i = 0; i < a.Length; i++)
+            for (int i = 0; i < a.Length; i++)
             {
                 int count = 0;
-                for(int j=0;j<a.Length; j++)
+                for (int j = 0; j < a.Length; j++)
                 {
                     if (a[i] == a[j])
                     {
@@ -23,7 +28,7 @@ namespace Array_Problem_Statements
                 }
                 Console.WriteLine($"{a[i]}. {count}");
 
-            } 
+            }
 
             int[] array = { 1, 2, 3, 4, 2, 3, 5, 6, 7, 1, 8, 9, 5 };
 
@@ -58,27 +63,28 @@ namespace Array_Problem_Statements
             {
                 Console.WriteLine($"{kvp.Key}: {kvp.Value} times");
             }
+
         }
-
-        static Dictionary<int, int> CountFrequency(int[] array1)
-        {
-            Dictionary<int, int> frequencyDictionary = new Dictionary<int, int>();
-
-            foreach (int num in array1)
+            static Dictionary<int, int> CountFrequency(int[] array1)
             {
-                if (frequencyDictionary.ContainsKey(num))
+                Dictionary<int, int> frequencyDictionary = new Dictionary<int, int>();
+
+                foreach (int num in array1)
                 {
-                    // Increment the count if the number is already in the dictionary
-                    frequencyDictionary[num]++;
+                    if (frequencyDictionary.ContainsKey(num))
+                    {
+                        // Increment the count if the number is already in the dictionary
+                        frequencyDictionary[num]++;
+                    }
+                    else
+                    {
+                        // Add the number to the dictionary with a count of 1
+                        frequencyDictionary.Add(num, 1);
+                    }
                 }
-                else
-                {
-                    // Add the number to the dictionary with a count of 1
-                    frequencyDictionary.Add(num, 1);
-                }
+
+                return frequencyDictionary;
             }
 
-            return frequencyDictionary;
-        }
     }
 }
