@@ -11,6 +11,14 @@ namespace Array_Problem_Statements
         static void Main(string[] args)
         {
 
+            Console.WriteLine("*******");
+            Console.WriteLine("*     *");
+            Console.WriteLine("*     *");
+            Console.WriteLine("*     *");
+            Console.WriteLine("*     *");
+            Console.WriteLine("*     *");
+            Console.WriteLine("*******\n");
+
 
             Console.WriteLine("********");
             Console.WriteLine("*******");
