@@ -10,6 +10,18 @@ namespace Array_Problem_Statements
     {
         static void Main(string[] args)
         {
+
+
+            Console.WriteLine("********");
+            Console.WriteLine("*******");
+            Console.WriteLine("******");
+            Console.WriteLine("*****");
+            Console.WriteLine("****");
+            Console.WriteLine("***");
+            Console.WriteLine("**");
+            Console.WriteLine("*\n");
+
+           
             int[] array3 = { 1, 2, 3, 4, 5 };
             Console.WriteLine(array3.Max());
             Console.WriteLine(array3.Min());
@@ -65,26 +77,29 @@ namespace Array_Problem_Statements
             }
 
         }
-            static Dictionary<int, int> CountFrequency(int[] array1)
+        static Dictionary<int, int> CountFrequency(int[] array1)
+        {
+            Dictionary<int, int> frequencyDictionary = new Dictionary<int, int>();
+
+            foreach (int num in array1)
             {
-                Dictionary<int, int> frequencyDictionary = new Dictionary<int, int>();
-
-                foreach (int num in array1)
+                if (frequencyDictionary.ContainsKey(num))
                 {
-                    if (frequencyDictionary.ContainsKey(num))
-                    {
-                        // Increment the count if the number is already in the dictionary
-                        frequencyDictionary[num]++;
-                    }
-                    else
-                    {
-                        // Add the number to the dictionary with a count of 1
-                        frequencyDictionary.Add(num, 1);
-                    }
+                    // Increment the count if the number is already in the dictionary
+                    frequencyDictionary[num]++;
                 }
-
-                return frequencyDictionary;
+                else
+                {
+                    // Add the number to the dictionary with a count of 1
+                    frequencyDictionary.Add(num, 1);
+                }
             }
 
+            return frequencyDictionary;
+
+           
+        }
+
+           
     }
 }
