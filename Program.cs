@@ -29,6 +29,8 @@ namespace Array_Problem_Statements
             }
             Console.WriteLine(sum);
 
+            
+
             Console.WriteLine("\n*******");
             Console.WriteLine("*     *");
             Console.WriteLine("*     *");
@@ -37,8 +39,21 @@ namespace Array_Problem_Statements
             Console.WriteLine("*     *");
             Console.WriteLine("*******\n");
 
+            int[,] a1 = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+            for (int i = 0; i < a1.GetLength(0); i++)
+            {
+                int sum1 = 0;
+                for (int j = 0; j < a1.GetLength(1); j++)
+                {
+                    sum1 = sum1 + a1[i, j];
+                }
+                Console.WriteLine(sum1);
 
-            Console.WriteLine("********");
+
+            }
+
+
+            Console.WriteLine("\n********");
             Console.WriteLine("*******");
             Console.WriteLine("******");
             Console.WriteLine("*****");
@@ -61,6 +76,8 @@ namespace Array_Problem_Statements
                     }
                 }
                 Console.WriteLine($"{a[i]}. {count}");
+
+
 
             }
 
