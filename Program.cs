@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,13 +12,24 @@ namespace Array_Problem_Statements
         static void Main(string[] args)
         {
 
+            
+
 
             int[] array3 = { 1, 2, 3, 4, 5 };
             Console.WriteLine(array3.Max());
             Console.WriteLine(array3.Min());
             Console.ReadLine();
 
-            Console.WriteLine("*******");
+            int n = 134, last_digit, sum =0;
+            while (n > 0)
+            {
+                last_digit = n % 10;
+                n = n / 10;
+                sum = sum + last_digit;
+            }
+            Console.WriteLine(sum);
+
+            Console.WriteLine("\n*******");
             Console.WriteLine("*     *");
             Console.WriteLine("*     *");
             Console.WriteLine("*     *");
@@ -119,6 +131,8 @@ namespace Array_Problem_Statements
 
         }
 
+        
+
         static string ReverseEachWord(string inputString)
         {
             string[] words = inputString.Split(' ');
@@ -138,6 +152,8 @@ namespace Array_Problem_Statements
             return new string(charArray);
 
         }
+
+      
 
      
         
