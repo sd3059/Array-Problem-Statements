@@ -11,6 +11,12 @@ namespace Array_Problem_Statements
         static void Main(string[] args)
         {
 
+
+            int[] array3 = { 1, 2, 3, 4, 5 };
+            Console.WriteLine(array3.Max());
+            Console.WriteLine(array3.Min());
+            Console.ReadLine();
+
             Console.WriteLine("*******");
             Console.WriteLine("*     *");
             Console.WriteLine("*     *");
@@ -29,11 +35,7 @@ namespace Array_Problem_Statements
             Console.WriteLine("**");
             Console.WriteLine("*\n");
 
-           
-            int[] array3 = { 1, 2, 3, 4, 5 };
-            Console.WriteLine(array3.Max());
-            Console.WriteLine(array3.Min());
-            Console.ReadLine();
+
 
             int[] a = { 1, 2, 2, 3, 4, 5, 6, 6, 6, 6, 7, 7, 7 };
             for (int i = 0; i < a.Length; i++)
@@ -71,6 +73,7 @@ namespace Array_Problem_Statements
             }
 
 
+
             int[] array1 = { 1, 2, 3, 4, 2, 3, 5, 6, 7, 1, 8, 9, 5 };
 
             Console.WriteLine("\n\nFrequency of each element in the array:");
@@ -83,6 +86,15 @@ namespace Array_Problem_Statements
             {
                 Console.WriteLine($"{kvp.Key}: {kvp.Value} times");
             }
+
+            Console.Write("Enter a string: ");
+            string inputString = Console.ReadLine();
+
+            string reversedString = ReverseEachWord(inputString);
+
+            Console.WriteLine("Result after reversing each word:\n");
+            Console.WriteLine(reversedString);
+
 
         }
         static Dictionary<int, int> CountFrequency(int[] array1)
@@ -105,9 +117,31 @@ namespace Array_Problem_Statements
 
             return frequencyDictionary;
 
-           
         }
 
-           
+        static string ReverseEachWord(string inputString)
+        {
+            string[] words = inputString.Split(' ');
+
+            for (int i = 0; i < words.Length; i++)
+            {
+                words[i] = ReverseString(words[i]);
+            }
+
+            return string.Join(" ", words);
+        }
+
+        static string ReverseString(string str)
+        {
+            char[] charArray = str.ToCharArray();
+            Array.Reverse(charArray);
+            return new string(charArray);
+
+        }
+
+     
+        
     }
+
+           
 }
